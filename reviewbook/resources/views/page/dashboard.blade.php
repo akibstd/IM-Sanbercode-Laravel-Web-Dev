@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('title')
+ dasboard
+@endsection
+@section('content')
+
+        
     <h1>selamat datang {{ $fullname }} {{ $lastname }} </h1>
     <h3>terimakasih telah bergabung di sosoal media kami</h3>
+@endsection
+
+@section('title')
+
+@endsection
     
-</body>
-</html>

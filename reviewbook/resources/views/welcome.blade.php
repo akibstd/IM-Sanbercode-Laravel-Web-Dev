@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('title')
+home
+@endsection
+@section('content')
+
+
     <h1>welcome di sanber code</h1>
     <h4>selamat datang dan selamat menempuh ilmu di tempat bootcamp kami</h4>
 
@@ -20,5 +19,8 @@
         <li>jelajahi tentang kami</li>
         
     </ul>
-</body>
-</html>
+    @endsection
+
+    @section('title')
+    
+    @endsection
