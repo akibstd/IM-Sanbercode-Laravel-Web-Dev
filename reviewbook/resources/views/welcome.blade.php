@@ -5,20 +5,21 @@ home
 @section('content')
 
 
-    <h1>welcome di sanber code</h1>
-    <h4>selamat datang dan selamat menempuh ilmu di tempat bootcamp kami</h4>
 
-    <h5>benefit</h5>
-    <ul>
-        <li>menambah wawasan</li>
-        <li>meningkatkann problem solving</li>
-        <li>menambah relasi</li>
-    </ul>
-    <ul>
-        <li><a href="/daftar">daftar sekarang</a> </li>
-        <li>jelajahi tentang kami</li>
-        
-    </ul>
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
+   
+    <h3 class=" hover:text-danger"><a >Ayo Mulai Membaca </a></h3>
+    <p class="font-mono">Membaca adalah jendela dunia, dan kini Anda bisa menjelajahinya dengan lebih mudah melalui AkibBooks web. Kami hadir sebagai platform digital yang menyediakan beragam koleksi buku dari berbagai genre, mulai dari fiksi, non-fiksi, sastra, hingga buku akademik. Dengan akses cepat dan praktis, Anda dapat menikmati bacaan favorit kapan saja dan di mana saja</p>
     @endsection
 
     @section('title')

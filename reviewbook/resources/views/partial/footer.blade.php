@@ -1,15 +1,12 @@
-<footer id="footer" class="footer dark-background">
+<footer id="footer" class="footer dsticky bottom-0" style=" background-color: #FCB454;">
 
     
 
-    <div class="container-fluid copyright text-center " style="height: 90vh">
+    <div class="container-fluid copyright text-center text-dark " style="height: 20vh">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Company</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      <div class="credits h-24">
+       
+       <h3>@Akib-web</h3>
       </div>
     </div>
 

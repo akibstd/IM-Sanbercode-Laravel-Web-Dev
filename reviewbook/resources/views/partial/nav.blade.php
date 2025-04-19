@@ -1,45 +1,48 @@
-<header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center sticky-top navbar-dark " style=" background-color: #FCB454;" >
+    <div class="container position-relative d-flex align-items-center justify-content-between d-sm-flex col-sm-11 " >
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Company</h1><span>.</span>
+      <a href="/" class="logo d-flex align-items-center me-auto">
+         @auth
+        <h1 class="sitename">{{Auth()->user()->name}}</h1><span>.</span>
+        @endauth
+        @guest
+        <h1 class="sitename">Books</h1><span>.</span>
+        @endguest
       </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+         
+      <nav id="navmenu" class="navmenu" style="margin-right:300px ">
+        <ul class="text-white">
+          <li><a href="/">Home</a></li>
+          {{-- <li><a href="/daftar">Daftar</a></li> --}}
+          <li><a href="/genre">Genre</a></li>
+          <li><a href="/books">Books</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <div class="header-social-links">
+      <div >
+      @guest
+
+     
+       <a href="/login" class="btn btn-primary mr-2">login</a>
+       <a href="/register" class="btn btn-outline-secondary">register</a>
+      
+       @endguest
+       @auth
+       <form action="/logout" method="POST">
+        @csrf
+        <input type="submit" value="logout" class="btn btn-danger">
+
+       </form>
+        @endauth
+      </div>  
+
+      {{-- <div class="header-social-links">
         <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
+      </div> --}}
 
     </div>
   </header>

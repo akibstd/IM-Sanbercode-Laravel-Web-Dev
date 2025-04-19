@@ -6,7 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    
     <h1>welcome</h1>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
     <h5>biodata anda</h5>
     

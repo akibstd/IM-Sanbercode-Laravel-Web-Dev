@@ -56,7 +56,7 @@
         
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-up" >
         @yield('content')
       </div>
 

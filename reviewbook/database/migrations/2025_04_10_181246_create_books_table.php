@@ -15,12 +15,11 @@ return new class extends Migration
             $table->id();
             $table->text('content');
             $table->string('title');
-            $table->text('summary');
+         
             $table->string('image');
-            $table->integer('stock');
+           
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            
 
             $table->unsignedBigInteger('genre_id');
             $table->foreign('genre_id')->references('id')->on('genres');
