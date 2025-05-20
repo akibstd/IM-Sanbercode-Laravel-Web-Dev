@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //sintak di bawah ini untuk membuat table produk
-        Schema::create('tb_produk', function (Blueprint $table) {
-            $table->id('id_produk');
-            $table->string('nama_produk',255);
-            $table->integer('harga',);
-            $table->text('deskripsi_produk');
-            $table->integer('kategori_id');
+        Schema::create('tb_kategori', function (Blueprint $table) {
+            $table->id('id_kategori');
+              $table->string('nama_kategori','100');
+              $table->text('deskripsi');
+
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produks');
+        Schema::dropIfExists('kategori');
     }
 };

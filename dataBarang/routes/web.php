@@ -19,7 +19,7 @@ Route::get('/beranda', function () {
     return view('layouts.beranda');
 });
 
-//  satu controleer bsa punya banya method
+//  satu controler bisa punya banya method
 Route::get('/product',[ProdukController::class,'getProduk']  )->name('product');
 Route::get('/product/tambah',[ProdukController::class,'addProduk']  )->name('tambah/product');
 
