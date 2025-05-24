@@ -20,7 +20,17 @@ Route::get('/beranda', function () {
 });
 
 //  satu controler bisa punya banya method
-Route::get('/product',[ProdukController::class,'getProduk']  )->name('product');
-Route::get('/product/tambah',[ProdukController::class,'addProduk']  )->name('tambah/product');
+Route::get('/product',[ProdukController::class,'index'] )->name('index'); // menampilkan data
+
+Route::get('/product/create',[ProdukController::class,'create']  )->name('create'); // menirim data ke form
+Route::post('/product',[ProdukController::class,'store'] )->name('store');  // mengolah data ke form tambahs
+
+
+Route::get('/product/{id}',[ProdukController::class,'show'] ); // membuat halaman detail
+
+Route::get('/product/{id}/edit',[ProdukController::class,'edit']);
+Route::put('/product/{id}',[ProdukController::class,'update']);
+
+Route::delete('/product/{id}/destroy',[ProdukController::class,'destroy']);
 
 

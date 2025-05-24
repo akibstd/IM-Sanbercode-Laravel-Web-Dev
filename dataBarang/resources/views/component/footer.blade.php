@@ -1,6 +1,7 @@
 <style>
 footer {
     position: relative;
+    margin-top:70px ;
     bottom: 0;
     width: 100%;
     background-color: #333;

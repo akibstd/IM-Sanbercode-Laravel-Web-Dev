@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-md bg-danger navbar-dark     rounded-1 "  >
   <div class="container-fluid ">
-    <a class="navbar-brand " href="#">Learn Laravel 12</a>
+    <a class="navbar-brand " href="#"><i class="bi bi-person-lines-fill"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,7 +18,7 @@
           <a class="nav-link" href="/contact">contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="{{route('product')}}" aria-disabled="true">produk</a>
+          <a class="nav-link " href="{{route('index')}}" aria-disabled="true">produk</a>
         </li>
       </ul>
     </div>
