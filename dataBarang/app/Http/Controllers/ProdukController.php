@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProdukController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $toko=[
             'nama_toko'=>'toko gue',
             'alamat'=>'nganjuk',
@@ -19,6 +19,11 @@ class ProdukController extends Controller
 
         ];
         $data=Produk::get();//mengambil data dari model produk
+
+//              $search=$request->input('keyword');
+//              $produk=produk::when($search,function($query,$search){
+//              return $query->where('nama_produk','like',"%{$search}%");
+//              })->get();
 
        // $QueryBuilder=DB::table('tb_produk')->get(); //ini query builder
 
@@ -68,7 +73,7 @@ class ProdukController extends Controller
        $data=produk::findOrFail($id);
        //jikaquerybuilder
        //DB::table('tb_produk)->where('id_produk',$id)->firstorfail();
-         
+
         return view('layouts.product.detail',['produk'=>$data]);
     }
 
@@ -107,8 +112,9 @@ class ProdukController extends Controller
      public function destroy($id){
        produk::where('id_produk',$id)->delete();
 
-       return redirect(route('index'))->with('massage','data berhasil di apus');
+       return redirect(route('index'))->with('massage','data berhasil di Hapus');
      }
 }
+
 
 //findorfile berdasarkan

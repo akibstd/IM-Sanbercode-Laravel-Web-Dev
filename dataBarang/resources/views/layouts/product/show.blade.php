@@ -21,9 +21,15 @@
    @endif
 
 <div class="card">
-  <div class=" card-header">
-    Daftar Produk
-  </div>
+  <form class=" card-header d-flex justify-content-between align-content-between">
+    @csrf
+    Daftar Produk 
+    <div class="input-group mb-3" style="width:350px">
+  <input type="text" name="keyword" class="form-control" placeholder="cari data" >
+  <button class="btn btn-success" type="button" id="button-addon2">Button</button>
+</div>
+    
+  </form>
   <div class="card-body">
 
     <table class="table table-striped table-hover table-bordered table-sm">
@@ -44,23 +50,20 @@
       <td>{{$item->nama_produk}}</td>
       <td>{{$item->harga}}</td>
       <td>{{$item->deskripsi_produk}}</td>
-      <td class="row-cols-lg-2">
+      <td class=" row ">
 
-        <a href="/product/{{$item->id_produk}}/edit"class="btn btn-success">
-          <i class="bi bi-credit-card-2-back-fill"></i>
-          Edit
+         <button type="submit" class="btn btn-primary col-3  " data-bs-toggle="modal" data-bs-target="#hapus{{$item->id_produk}}">
+           <i class="bi bi-trash-fill"></i>
+          </button>
+
+        <a href="/product/{{$item->id_produk}}/edit"class="btn btn-success col-3 ">
+          <i class="bi bi-pencil-fill"></i>
          </a>
-        <a href="/product/{{$item->id_produk}}" class="btn btn-danger">
-          <i class="bi bi-eraser-fill"></i>
-          detail</a>
-            
-        <form action="/product/{{$item->id_produk}}/destroy" method="POST">
-          <div class="d-grid mt-1">
-          @csrf
-          @method('DELETE')
-          <input type="submit" class="btn btn-danger mt-1 w-9 " value="DELETE">
-          </div>
-        </form>
+        <a href="/product/{{$item->id_produk}}" class="btn btn-danger col-3 ">
+         <i class="bi bi-exposure"></i>
+          </a>
+
+       
       </td>
 
 
@@ -73,6 +76,29 @@
 </table>
   </div>
 </div>
+<!-- Modal -->
+  @foreach ($data_produk as $item )
+   <div class="modal fade" id="hapus{{$item->id_produk}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST"  action="/product/{{$item->id_produk}}/destroy" class="modal-content">
+      @method('DELETE')
+      @csrf
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Apakah Anda Yakin Ingin Menghapus</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        apakah anda yakin ingin Menhapus :{{$item->nama_produk}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       <button type="submit" class="btn btn-primary">Hapus Data</button>
+      </div>
+       
+    </form>
+  </div>
+</div>
+  @endforeach
 
 @endsection
 
